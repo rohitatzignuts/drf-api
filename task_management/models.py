@@ -13,6 +13,9 @@ class Task(models.Model):
         WORK = "W", "Work"
         PERSONAL = "P", "Personal"
 
+    owner = models.ForeignKey(
+        "auth.User", related_name="tasks", on_delete=models.CASCADE
+    )
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     tag = models.CharField(max_length=1, choices=TagChoices.choices)

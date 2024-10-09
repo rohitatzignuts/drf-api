@@ -22,4 +22,5 @@ from task_management import urls
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/tasks/", include("task_management.urls")),
+    path("api-auth/", include("rest_framework.urls")),
 ]
